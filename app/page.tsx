@@ -6,6 +6,9 @@ const gallery = [
   { src: '/site/salao.jpg', alt: 'Salão amplo preparado para receber', className: '' },
   { src: '/site/quarto.jpg', alt: 'Quarto confortável do Cantinho da Dê', className: '' },
   { src: '/site/cozinha.jpg', alt: 'Cozinha equipada integrada ao salão', className: '' },
+  { src: '/site/sinuca.jpg', alt: 'Mesa de sinuca no mezanino', className: '' },
+  { src: '/site/bar.jpg', alt: 'Bar da área de convivência', className: '' },
+  { src: '/site/banheiro.jpg', alt: 'Banheiro completo do Cantinho da Dê', className: '' },
 ];
 
 export default function Home() {
@@ -29,7 +32,7 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow">Jockey · Brasília</p>
-          <h1>Um lugar inteiro<br />para viver bons encontros.</h1>
+          <h1>Um lugar inteiro{' '}<br />para viver bons encontros.</h1>
           <p className="hero-lead">Conforto, lazer e natureza em um espaço amplo, acolhedor e cheio de personalidade.</p>
           <div className="hero-actions">
             <a className="button button-gold" href={airbnbUrl} target="_blank" rel="noreferrer">Consultar disponibilidade <span>↗</span></a>
@@ -44,31 +47,31 @@ export default function Home() {
       </section>
 
       <section className="intro section" id="espaco">
-        <div><p className="eyebrow dark">O Cantinho</p><h2>Espaço para desacelerar.<br /><em>Liberdade para aproveitar.</em></h2></div>
+        <div><p className="eyebrow dark">O Cantinho</p><h2>Espaço para desacelerar.{' '}<br /><em>Liberdade para aproveitar.</em></h2></div>
         <div className="intro-copy"><p>O Cantinho da Dê une arquitetura contemporânea, ambientes integrados e áreas de lazer pensadas para quem valoriza tempo de qualidade.</p><p>Da piscina ao salão, da sinuca ao jardim: cada espaço convida a ficar mais um pouco.</p></div>
       </section>
 
       <section className="feature section" id="experiencias">
-        <div className="feature-image"><img src="/site/piscina.jpg" alt="Piscina iluminada do Cantinho da Dê" /><span>01</span></div>
-        <div className="feature-copy"><p className="eyebrow dark">Lazer ao ar livre</p><h2>Dias de sol.<br />Noites inesquecíveis.</h2><p>A área externa é um convite para relaxar, reunir quem importa e aproveitar o clima de Brasília com privacidade.</p><ul><li>Piscina privativa</li><li>Jardim e pomar</li><li>Ambiente reservado</li></ul></div>
+        <div className="feature-image"><img src="/site/piscina.jpg" alt="Piscina iluminada do Cantinho da Dê" width={1600} height={900} loading="lazy" /><span>01</span></div>
+        <div className="feature-copy"><p className="eyebrow dark">Lazer ao ar livre</p><h2>Dias de sol.{' '}<br />Noites inesquecíveis.</h2><p>A área externa é um convite para relaxar, reunir quem importa e aproveitar o clima de Brasília com privacidade.</p><ul><li>Piscina privativa</li><li>Jardim e pomar</li><li>Ambiente reservado</li></ul></div>
       </section>
 
       <section className="feature feature-reverse section">
-        <div className="feature-image"><img src="/site/rede.jpg" alt="Rede suspensa e mesa de sinuca no mezanino" /><span>02</span></div>
-        <div className="feature-copy"><p className="eyebrow dark">Diversão em outro nível</p><h2>Um espaço que<br />não parece com nenhum outro.</h2><p>O mezanino reúne sinuca, cantinhos de descanso e a rede suspensa — um dos detalhes mais marcantes da casa.</p><ul><li>Mesa de sinuca</li><li>Rede suspensa</li><li>TV móvel de 65”</li></ul></div>
+        <div className="feature-image"><img src="/site/rede.jpg" alt="Rede suspensa e mesa de sinuca no mezanino" width={1600} height={900} loading="lazy" /><span>02</span></div>
+        <div className="feature-copy"><p className="eyebrow dark">Diversão em outro nível</p><h2>Um espaço que{' '}<br />não parece com nenhum outro.</h2><p>O mezanino reúne sinuca, cantinhos de descanso e a rede suspensa — um dos detalhes mais marcantes da casa.</p><ul><li>Mesa de sinuca</li><li>Rede suspensa</li><li>TV móvel de 65”</li></ul></div>
       </section>
 
       <section className="tour-invite">
-        <img src="/site/salao.jpg" alt="Salão principal do Cantinho da Dê" /><div className="tour-invite-shade" />
-        <div className="tour-invite-copy"><span className="tour-orbit">360°</span><p className="eyebrow">Visita imersiva</p><h2>Entre antes<br />mesmo de chegar.</h2><p>Passeie por cada ambiente e descubra os detalhes do Cantinho da Dê.</p><a className="button button-gold" href="/explorar">Iniciar tour virtual <span>→</span></a></div>
+        <img src="/site/salao.jpg" alt="Salão principal do Cantinho da Dê" width={1600} height={900} loading="lazy" /><div className="tour-invite-shade" />
+        <div className="tour-invite-copy"><span className="tour-orbit">360°</span><p className="eyebrow">Visita imersiva</p><h2>Entre antes{' '}<br />mesmo de chegar.</h2><p>Passeie por cada ambiente e descubra os detalhes do Cantinho da Dê.</p><a className="button button-gold" href="/explorar">Iniciar tour virtual <span>→</span></a></div>
       </section>
 
       <section className="gallery-section section" id="galeria">
         <div className="section-heading"><div><p className="eyebrow dark">Galeria</p><h2>Um olhar mais de perto.</h2></div><p>Ambientes reais, preparados com carinho para receber.</p></div>
-        <div className="gallery-grid">{gallery.map((item) => <figure key={item.src} className={item.className}><img src={item.src} alt={item.alt} loading="lazy" /></figure>)}</div>
+        <div className="gallery-grid">{gallery.map((item) => <figure key={item.src} className={item.className}><img src={item.src} alt={item.alt} width={1600} height={900} loading="lazy" /></figure>)}</div>
       </section>
 
-      <section className="closing-cta"><div><p className="eyebrow">Seu próximo encontro começa aqui</p><h2>Venha viver o<br />Cantinho da Dê.</h2></div><a className="button button-gold" href={airbnbUrl} target="_blank" rel="noreferrer">Ver datas disponíveis <span>↗</span></a></section>
+      <section className="closing-cta"><div><p className="eyebrow">Seu próximo encontro começa aqui</p><h2>Venha viver o{' '}<br />Cantinho da Dê.</h2></div><a className="button button-gold" href={airbnbUrl} target="_blank" rel="noreferrer">Ver datas disponíveis <span>↗</span></a></section>
 
       <footer className="site-footer">
         <div className="footer-brand"><span className="site-brand-mark">Dê</span><div><strong>Cantinho da Dê</strong><small>Encontros que se conectam</small></div></div>
