@@ -1,4 +1,6 @@
-const airbnbUrl = 'https://www.airbnb.com.br/rooms/1670634373405703050';
+import SiteHeader from './components/SiteHeader';
+import SiteFooter from './components/SiteFooter';
+import { airbnbUrl } from './site-config';
 
 const gallery = [
   { src: '/site/piscina.jpg', alt: 'Piscina iluminada durante a noite', className: 'gallery-wide' },
@@ -14,16 +16,7 @@ const gallery = [
 export default function Home() {
   return (
     <main className="site-shell">
-      <header className="site-header">
-        <a className="site-brand" href="#inicio" aria-label="Cantinho da Dê — início">
-          <span className="site-brand-mark">Dê</span>
-          <span><strong>Cantinho da Dê</strong><small>Encontros que se conectam</small></span>
-        </a>
-        <nav className="site-nav" aria-label="Navegação principal">
-          <a href="#espaco">O espaço</a><a href="#experiencias">Experiências</a><a href="#galeria">Galeria</a><a href="/explorar">Tour 360°</a>
-        </nav>
-        <a className="header-cta" href={airbnbUrl} target="_blank" rel="noreferrer">Ver no Airbnb <span>↗</span></a>
-      </header>
+      <SiteHeader cta={{ label: 'Ver no Airbnb', href: airbnbUrl, external: true }} />
 
       <section className="hero" id="inicio">
         <video autoPlay muted loop playsInline poster="/site/fachada.jpg" preload="metadata" aria-hidden="true">
@@ -71,12 +64,36 @@ export default function Home() {
         <div className="gallery-grid">{gallery.map((item) => <figure key={item.src} className={item.className}><img src={item.src} alt={item.alt} width={1600} height={900} loading="lazy" /></figure>)}</div>
       </section>
 
+      <section className="section" style={{ background: 'var(--cream)' }}>
+        <div className="section-heading">
+          <div><p className="eyebrow dark">A casa também recebe</p><h2>Mais do que hospedagem.</h2></div>
+          <p>De segunda a quinta o Cantinho abre para grupos, encontros e produções.</p>
+        </div>
+        <div className="doors">
+          <a className="door" href="/workshops">
+            <img src="/site/salao.jpg" alt="" width={1600} height={900} loading="lazy" />
+            <div>
+              <p className="eyebrow">Workshops e imersões</p>
+              <h3>Um dia inteiro de foco.</h3>
+              <p>Salão de encontros com dois banheiros exclusivos. Piscina e pomar no intervalo.</p>
+              <b>Conhecer o espaço →</b>
+            </div>
+          </a>
+          <a className="door" href="/producao">
+            <img src="/site/rede.jpg" alt="" width={1600} height={900} loading="lazy" />
+            <div>
+              <p className="eyebrow">Locação para produção</p>
+              <h3>Dez cenários, um endereço.</h3>
+              <p>Arquitetura industrial pronta para ensaio, gravação e produção de conteúdo.</p>
+              <b>Ver detalhes →</b>
+            </div>
+          </a>
+        </div>
+      </section>
+
       <section className="closing-cta"><div><p className="eyebrow">Seu próximo encontro começa aqui</p><h2>Venha viver o{' '}<br />Cantinho da Dê.</h2></div><a className="button button-gold" href={airbnbUrl} target="_blank" rel="noreferrer">Ver datas disponíveis <span>↗</span></a></section>
 
-      <footer className="site-footer">
-        <div className="footer-brand"><span className="site-brand-mark">Dê</span><div><strong>Cantinho da Dê</strong><small>Encontros que se conectam</small></div></div>
-        <div><span>Jockey · Brasília, DF</span><span>Hospedagem inteira</span></div><div><a href="/explorar">Tour 360°</a><a href={airbnbUrl} target="_blank" rel="noreferrer">Airbnb ↗</a></div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
