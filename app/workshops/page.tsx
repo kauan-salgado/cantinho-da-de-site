@@ -37,7 +37,7 @@ export default function WorkshopsPage() {
             Zero cara de escritório.
           </h1>
           <p className="hero-lead">
-            A ⟨15⟩ minutos do Plano Piloto, uma casa com salão de encontros, piscina e pomar — para
+            A 15 minutos do Plano Piloto, uma casa com salão de encontros, piscina e pomar — para
             workshops, treinamentos e imersões que não terminam com todo mundo olhando o relógio.
           </p>
           <div className="hero-actions">
@@ -55,7 +55,7 @@ export default function WorkshopsPage() {
         <div><strong>30 pessoas</strong><span>sentadas no salão</span></div>
         <div><strong>2 banheiros</strong><span>exclusivos do espaço</span></div>
         <div><strong>10 vagas</strong><span>dentro do lote</span></div>
-        <div><strong>⟨15⟩ min</strong><span>do Plano Piloto</span></div>
+        <div><strong>15 min</strong><span>do Plano Piloto</span></div>
       </section>
 
       <section className="intro section">
