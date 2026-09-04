@@ -1,0 +1,79 @@
+const airbnbUrl = 'https://www.airbnb.com.br/rooms/1670634373405703050';
+
+const gallery = [
+  { src: '/site/piscina.jpg', alt: 'Piscina iluminada durante a noite', className: 'gallery-wide' },
+  { src: '/site/rede.jpg', alt: 'Rede suspensa e área de jogos no mezanino', className: '' },
+  { src: '/site/salao.jpg', alt: 'Salão amplo preparado para receber', className: '' },
+  { src: '/site/quarto.jpg', alt: 'Quarto confortável do Cantinho da Dê', className: '' },
+  { src: '/site/cozinha.jpg', alt: 'Cozinha equipada integrada ao salão', className: '' },
+];
+
+export default function Home() {
+  return (
+    <main className="site-shell">
+      <header className="site-header">
+        <a className="site-brand" href="#inicio" aria-label="Cantinho da Dê — início">
+          <span className="site-brand-mark">Dê</span>
+          <span><strong>Cantinho da Dê</strong><small>Encontros que se conectam</small></span>
+        </a>
+        <nav className="site-nav" aria-label="Navegação principal">
+          <a href="#espaco">O espaço</a><a href="#experiencias">Experiências</a><a href="#galeria">Galeria</a><a href="/explorar">Tour 360°</a>
+        </nav>
+        <a className="header-cta" href={airbnbUrl} target="_blank" rel="noreferrer">Ver no Airbnb <span>↗</span></a>
+      </header>
+
+      <section className="hero" id="inicio">
+        <video autoPlay muted loop playsInline poster="/site/fachada.jpg" preload="metadata" aria-hidden="true">
+          <source src="/site/abertura-drone.m4v" type="video/mp4" />
+        </video>
+        <div className="hero-shade" />
+        <div className="hero-copy">
+          <p className="eyebrow">Jockey · Brasília</p>
+          <h1>Um lugar inteiro<br />para viver bons encontros.</h1>
+          <p className="hero-lead">Conforto, lazer e natureza em um espaço amplo, acolhedor e cheio de personalidade.</p>
+          <div className="hero-actions">
+            <a className="button button-gold" href={airbnbUrl} target="_blank" rel="noreferrer">Consultar disponibilidade <span>↗</span></a>
+            <a className="button button-ghost" href="/explorar">Explorar em 360° <span>→</span></a>
+          </div>
+        </div>
+        <a className="scroll-cue" href="#espaco"><span>Conheça o espaço</span><b>↓</b></a>
+      </section>
+
+      <section className="facts" aria-label="Informações da hospedagem">
+        <div><strong>Até 6</strong><span>hóspedes</span></div><div><strong>2</strong><span>quartos</span></div><div><strong>3</strong><span>banheiros</span></div><div><strong>1 experiência</strong><span>inteira para você</span></div>
+      </section>
+
+      <section className="intro section" id="espaco">
+        <div><p className="eyebrow dark">O Cantinho</p><h2>Espaço para desacelerar.<br /><em>Liberdade para aproveitar.</em></h2></div>
+        <div className="intro-copy"><p>O Cantinho da Dê une arquitetura contemporânea, ambientes integrados e áreas de lazer pensadas para quem valoriza tempo de qualidade.</p><p>Da piscina ao salão, da sinuca ao jardim: cada espaço convida a ficar mais um pouco.</p></div>
+      </section>
+
+      <section className="feature section" id="experiencias">
+        <div className="feature-image"><img src="/site/piscina.jpg" alt="Piscina iluminada do Cantinho da Dê" /><span>01</span></div>
+        <div className="feature-copy"><p className="eyebrow dark">Lazer ao ar livre</p><h2>Dias de sol.<br />Noites inesquecíveis.</h2><p>A área externa é um convite para relaxar, reunir quem importa e aproveitar o clima de Brasília com privacidade.</p><ul><li>Piscina privativa</li><li>Jardim e pomar</li><li>Ambiente reservado</li></ul></div>
+      </section>
+
+      <section className="feature feature-reverse section">
+        <div className="feature-image"><img src="/site/rede.jpg" alt="Rede suspensa e mesa de sinuca no mezanino" /><span>02</span></div>
+        <div className="feature-copy"><p className="eyebrow dark">Diversão em outro nível</p><h2>Um espaço que<br />não parece com nenhum outro.</h2><p>O mezanino reúne sinuca, cantinhos de descanso e a rede suspensa — um dos detalhes mais marcantes da casa.</p><ul><li>Mesa de sinuca</li><li>Rede suspensa</li><li>TV móvel de 65”</li></ul></div>
+      </section>
+
+      <section className="tour-invite">
+        <img src="/site/salao.jpg" alt="Salão principal do Cantinho da Dê" /><div className="tour-invite-shade" />
+        <div className="tour-invite-copy"><span className="tour-orbit">360°</span><p className="eyebrow">Visita imersiva</p><h2>Entre antes<br />mesmo de chegar.</h2><p>Passeie por cada ambiente e descubra os detalhes do Cantinho da Dê.</p><a className="button button-gold" href="/explorar">Iniciar tour virtual <span>→</span></a></div>
+      </section>
+
+      <section className="gallery-section section" id="galeria">
+        <div className="section-heading"><div><p className="eyebrow dark">Galeria</p><h2>Um olhar mais de perto.</h2></div><p>Ambientes reais, preparados com carinho para receber.</p></div>
+        <div className="gallery-grid">{gallery.map((item) => <figure key={item.src} className={item.className}><img src={item.src} alt={item.alt} loading="lazy" /></figure>)}</div>
+      </section>
+
+      <section className="closing-cta"><div><p className="eyebrow">Seu próximo encontro começa aqui</p><h2>Venha viver o<br />Cantinho da Dê.</h2></div><a className="button button-gold" href={airbnbUrl} target="_blank" rel="noreferrer">Ver datas disponíveis <span>↗</span></a></section>
+
+      <footer className="site-footer">
+        <div className="footer-brand"><span className="site-brand-mark">Dê</span><div><strong>Cantinho da Dê</strong><small>Encontros que se conectam</small></div></div>
+        <div><span>Jockey · Brasília, DF</span><span>Hospedagem inteira</span></div><div><a href="/explorar">Tour 360°</a><a href={airbnbUrl} target="_blank" rel="noreferrer">Airbnb ↗</a></div>
+      </footer>
+    </main>
+  );
+}
