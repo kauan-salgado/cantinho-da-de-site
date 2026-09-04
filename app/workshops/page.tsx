@@ -54,7 +54,7 @@ export default function WorkshopsPage() {
       <section className="facts" aria-label="Ficha técnica do espaço">
         <div><strong>30 pessoas</strong><span>sentadas no salão</span></div>
         <div><strong>2 banheiros</strong><span>exclusivos do espaço</span></div>
-        <div><strong>⟨X⟩ vagas</strong><span>dentro do lote</span></div>
+        <div><strong>10 vagas</strong><span>dentro do lote</span></div>
         <div><strong>⟨15⟩ min</strong><span>do Plano Piloto</span></div>
       </section>
 
@@ -159,6 +159,11 @@ export default function WorkshopsPage() {
         <p className="note">
           <strong>Disponibilidade:</strong> encontros de segunda a quinta. Sexta, sábado e domingo a
           casa é reservada para hospedagem.
+        </p>
+        <p className="note">
+          <strong>Grupos acima de 20 pessoas:</strong> são 10 vagas dentro do lote. Para turmas
+          maiores, vale combinar van ou carona antes — o condomínio é residencial e a rua não
+          comporta o excedente. A gente ajuda a organizar isso no primeiro contato.
         </p>
       </section>
 
