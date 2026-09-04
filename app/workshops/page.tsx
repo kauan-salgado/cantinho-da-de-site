@@ -6,12 +6,12 @@ import { whatsappLink } from '../site-config';
 export const metadata: Metadata = {
   title: 'Espaço para workshops e imersões | Cantinho da Dê',
   description:
-    'Casa com espaço de encontros, piscina e pomar a 15 minutos do Plano Piloto. Para workshops, treinamentos, aulas e imersões de equipe em Brasília.',
+    'Salão para até 30 pessoas sentadas, piscina e pomar a 15 minutos do Plano Piloto. Para workshops, treinamentos, aulas e imersões de equipe em Brasília.',
   alternates: { canonical: '/workshops' },
   openGraph: {
     title: 'Espaço para workshops e imersões | Cantinho da Dê',
     description:
-      'Um dia inteiro de foco, sem cara de escritório. Espaço de encontros, piscina e pomar no Park Way, a 15 minutos do Plano Piloto.',
+      'Um dia inteiro de foco, sem cara de escritório. Salão para até 30 pessoas, piscina e pomar no Park Way, a 15 minutos do Plano Piloto.',
     url: '/workshops',
     images: [{ url: '/site/og.jpg', width: 1200, height: 630, alt: 'Cantinho da Dê, em Brasília' }],
   },
@@ -52,7 +52,7 @@ export default function WorkshopsPage() {
       </section>
 
       <section className="facts" aria-label="Ficha técnica do espaço">
-        <div><strong>⟨X⟩ pessoas</strong><span>sentadas no salão</span></div>
+        <div><strong>30 pessoas</strong><span>sentadas no salão</span></div>
         <div><strong>2 banheiros</strong><span>exclusivos do espaço</span></div>
         <div><strong>⟨X⟩ vagas</strong><span>dentro do lote</span></div>
         <div><strong>⟨15⟩ min</strong><span>do Plano Piloto</span></div>
@@ -69,7 +69,7 @@ export default function WorkshopsPage() {
         </div>
         <div className="intro-copy">
           <p>
-            O salão ocupa todo o andar de baixo e tem dois banheiros exclusivos — ninguém precisa
+            O salão ocupa todo o andar de baixo, acomoda 30 pessoas sentadas e tem dois banheiros exclusivos — ninguém precisa
             atravessar a casa no meio de uma dinâmica.
           </p>
           <p>

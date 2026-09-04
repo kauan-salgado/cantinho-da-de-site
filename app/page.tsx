@@ -75,7 +75,7 @@ export default function Home() {
             <div>
               <p className="eyebrow">Workshops e imersões</p>
               <h3>Um dia inteiro de foco.</h3>
-              <p>Salão de encontros com dois banheiros exclusivos. Piscina e pomar no intervalo.</p>
+              <p>Salão para 30 pessoas sentadas, com dois banheiros exclusivos. Piscina e pomar no intervalo.</p>
               <b>Conhecer o espaço →</b>
             </div>
           </a>
