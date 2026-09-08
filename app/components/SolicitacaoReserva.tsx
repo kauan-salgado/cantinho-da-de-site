@@ -213,7 +213,7 @@ export default function SolicitacaoReserva() {
             <p className="aviso erro">Acima do limite de {tipo.maxPessoas} pessoas para esse formato. Fale com a gente para ver o que dá para fazer.</p>
           )}
           {alertaTransporte && (
-            <p className="aviso">São 10 vagas dentro do lote. Para esse tamanho de grupo, vale combinar van ou carona — a gente ajuda a organizar.</p>
+            <p className="aviso">São 10 vagas de estacionamento dentro do lote. Para esse tamanho de grupo, vale combinar van ou carona — a gente ajuda a organizar.</p>
           )}
         </fieldset>
 

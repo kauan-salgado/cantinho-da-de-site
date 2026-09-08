@@ -54,7 +54,7 @@ export default function Home() {
       <section className="facts" aria-label="Ficha técnica do espaço">
         <div><strong>30 pessoas</strong><span>sentadas no salão</span></div>
         <div><strong>2 banheiros</strong><span>exclusivos do espaço</span></div>
-        <div><strong>10 vagas</strong><span>dentro do lote</span></div>
+        <div><strong>10 vagas</strong><span>de estacionamento no lote</span></div>
         <div><strong>15 min</strong><span>do Plano Piloto</span></div>
       </section>
 
@@ -76,6 +76,11 @@ export default function Home() {
             A Smart TV de 65 polegadas é móvel e serve tanto de tela de apresentação quanto de som. O
             mobiliário se reconfigura conforme o formato: mesa única para workshop, U para
             treinamento, plateia para palestra.
+          </p>
+          <p>
+            A cozinha completa fica ao lado, com fogão, geladeira, micro-ondas, cafeteira e bancada.
+            É estrutura pronta para receber o buffet que você contratar — sem marmita fria e sem
+            precisar interromper o dia para sair e almoçar.
           </p>
         </div>
       </section>
@@ -100,6 +105,7 @@ export default function Home() {
             <li>Jardim e pomar para o intervalo ao ar livre</li>
             <li>Fogueira ao ar livre</li>
             <li>Mesa de sinuca no mezanino</li>
+            <li>Cozinha completa para coffee break e buffet</li>
             <li>Churrasqueira para o almoço no local</li>
           </ul>
         </div>
@@ -161,7 +167,7 @@ export default function Home() {
           ocupadas, atualizadas direto do nosso sistema de reservas.
         </p>
         <p className="note">
-          <strong>Grupos acima de 20 pessoas:</strong> são 10 vagas dentro do lote. Para turmas
+          <strong>Grupos acima de 20 pessoas:</strong> são 10 vagas de estacionamento dentro do lote. Para turmas
           maiores, vale combinar van ou carona antes — o condomínio é residencial e a rua não
           comporta o excedente. A gente ajuda a organizar isso no primeiro contato.
         </p>

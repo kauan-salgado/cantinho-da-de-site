@@ -65,7 +65,7 @@ export default function ProducaoPage() {
       <section className="facts" aria-label="Ficha técnica para produção">
         <div><strong>10 cenários</strong><span>em um só local</span></div>
         <div><strong>Tour 360°</strong><span>visita técnica remota</span></div>
-        <div><strong>10 vagas</strong><span>para a equipe</span></div>
+        <div><strong>10 vagas</strong><span>de estacionamento</span></div>
         <div><strong>Condomínio</strong><span>fechado e reservado</span></div>
       </section>
 
@@ -139,7 +139,7 @@ export default function ProducaoPage() {
           <ul>
             <li>Cozinha completa para apoio e catering</li>
             <li>Três banheiros, sendo dois no térreo</li>
-            <li>10 vagas dentro do lote, sem carga na rua</li>
+            <li>10 vagas de estacionamento no lote, sem carga na rua</li>
             <li>Wi-Fi e pontos de energia distribuídos</li>
             <li>Condomínio fechado — set reservado e silencioso</li>
           </ul>
