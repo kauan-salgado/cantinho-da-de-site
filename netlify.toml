@@ -4,3 +4,15 @@
 
 [build.environment]
   NODE_VERSION = "22.17.1"
+
+# /workshops virou a home em 08/09/2026. Redireciona para nao quebrar
+# links que ja tenham sido compartilhados.
+[[redirects]]
+  from = "/workshops"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/workshops/*"
+  to = "/"
+  status = 301

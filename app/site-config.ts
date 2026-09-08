@@ -10,8 +10,8 @@ export function whatsappLink(mensagem: string) {
 }
 
 export const navLinks = [
-  { href: '/', label: 'Hospedagem' },
-  { href: '/workshops', label: 'Workshops' },
+  { href: '/', label: 'Workshops' },
+  { href: '/hospedagem', label: 'Hospedagem' },
   { href: '/producao', label: 'Produção' },
   { href: '/reservar', label: 'Reservar' },
   { href: '/explorar', label: 'Tour 360°' },

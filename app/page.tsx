@@ -1,82 +1,185 @@
+import type { Metadata } from 'next';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
-import { airbnbUrl } from './site-config';
+import { whatsappLink } from './site-config';
 
-const gallery = [
-  { src: '/site/piscina.jpg', alt: 'Piscina iluminada durante a noite', className: 'gallery-wide' },
-  { src: '/site/rede.jpg', alt: 'Rede suspensa e área de jogos no mezanino', className: '' },
-  { src: '/site/salao.jpg', alt: 'Salão amplo preparado para receber', className: '' },
-  { src: '/site/quarto.jpg', alt: 'Quarto confortável do Cantinho da Dê', className: '' },
-  { src: '/site/cozinha.jpg', alt: 'Cozinha equipada integrada ao salão', className: '' },
-  { src: '/site/sinuca.jpg', alt: 'Mesa de sinuca no mezanino', className: '' },
-  { src: '/site/bar.jpg', alt: 'Bar da área de convivência', className: '' },
-  { src: '/site/banheiro.jpg', alt: 'Banheiro completo do Cantinho da Dê', className: '' },
-];
+export const metadata: Metadata = {
+  title: 'Cantinho da Dê | Espaço para workshops e encontros em Brasília',
+  description:
+    'Salão para até 30 pessoas sentadas, jardim e pomar a 15 minutos do Plano Piloto. Para workshops, treinamentos, aulas e imersões de equipe em Brasília.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Cantinho da Dê | Espaço para workshops e encontros em Brasília',
+    description:
+      'Um dia inteiro de foco, sem cara de escritório. Salão para até 30 pessoas, jardim e pomar no Park Way, a 15 minutos do Plano Piloto.',
+    url: '/',
+    images: [{ url: '/site/og.jpg', width: 1200, height: 630, alt: 'Cantinho da Dê, em Brasília' }],
+  },
+};
+
+const contato = whatsappLink(
+  'Olá! Vi o site do Cantinho da Dê e queria saber sobre o espaço para workshop.',
+);
 
 export default function Home() {
   return (
     <main className="site-shell">
-      <SiteHeader cta={{ label: 'Ver no Airbnb', href: airbnbUrl, external: true }} />
+      <SiteHeader cta={{ label: 'Falar no WhatsApp', href: contato, external: true }} />
 
-      <section className="hero" id="inicio">
-        <video autoPlay muted loop playsInline poster="/site/fachada.jpg" preload="metadata" aria-hidden="true">
-          <source src="/site/abertura-drone.m4v" type="video/mp4" />
-        </video>
+      <section className="hero">
+        <img src="/site/salao.jpg" alt="Salão do Cantinho da Dê preparado para receber grupos" width={1600} height={900} />
         <div className="hero-shade" />
         <div className="hero-copy">
-          <p className="eyebrow">Jockey · Brasília</p>
-          <h1>Um lugar inteiro{' '}<br />para viver bons encontros.</h1>
-          <p className="hero-lead">Conforto, lazer e natureza em um espaço amplo, acolhedor e cheio de personalidade.</p>
+          <p className="eyebrow">Espaço para encontros · Park Way</p>
+          <h1>
+            Um dia inteiro de foco.{' '}
+            <br />
+            Zero cara de escritório.
+          </h1>
+          <p className="hero-lead">
+            A 15 minutos do Plano Piloto, uma casa com salão de encontros, jardim e pomar — para
+            workshops, treinamentos e imersões que não terminam com todo mundo olhando o relógio.
+          </p>
           <div className="hero-actions">
-            <a className="button button-gold" href={airbnbUrl} target="_blank" rel="noreferrer">Consultar disponibilidade <span>↗</span></a>
-            <a className="button button-ghost" href="/explorar">Explorar em 360° <span>→</span></a>
+            <a className="button button-gold" href="/reservar?tipo=workshop">
+              Solicitar reserva <span>→</span>
+            </a>
+            <a className="button button-ghost" href="/explorar">
+              Ver o espaço em 360° <span>→</span>
+            </a>
           </div>
         </div>
-        <a className="scroll-cue" href="#espaco"><span>Conheça o espaço</span><b>↓</b></a>
       </section>
 
-      <section className="facts" aria-label="Informações da hospedagem">
-        <div><strong>Até 6</strong><span>hóspedes</span></div><div><strong>2</strong><span>quartos</span></div><div><strong>3</strong><span>banheiros</span></div><div><strong>1 experiência</strong><span>inteira para você</span></div>
+      <section className="facts" aria-label="Ficha técnica do espaço">
+        <div><strong>30 pessoas</strong><span>sentadas no salão</span></div>
+        <div><strong>2 banheiros</strong><span>exclusivos do espaço</span></div>
+        <div><strong>10 vagas</strong><span>dentro do lote</span></div>
+        <div><strong>15 min</strong><span>do Plano Piloto</span></div>
       </section>
 
-      <section className="intro section" id="espaco">
-        <div><p className="eyebrow dark">O Cantinho</p><h2>Espaço para desacelerar.{' '}<br /><em>Liberdade para aproveitar.</em></h2></div>
-        <div className="intro-copy"><p>O Cantinho da Dê une arquitetura contemporânea, ambientes integrados e áreas de lazer pensadas para quem valoriza tempo de qualidade.</p><p>Da piscina ao salão, da sinuca ao jardim: cada espaço convida a ficar mais um pouco.</p></div>
+      <section className="intro section">
+        <div>
+          <p className="eyebrow dark">O espaço de encontros</p>
+          <h2>
+            O térreo inteiro.{' '}
+            <br />
+            <em>Só para o seu grupo.</em>
+          </h2>
+        </div>
+        <div className="intro-copy">
+          <p>
+            O salão ocupa todo o andar de baixo, acomoda 30 pessoas sentadas e tem dois banheiros exclusivos — ninguém precisa
+            atravessar a casa no meio de uma dinâmica.
+          </p>
+          <p>
+            A Smart TV de 65 polegadas é móvel e serve tanto de tela de apresentação quanto de som. O
+            mobiliário se reconfigura conforme o formato: mesa única para workshop, U para
+            treinamento, plateia para palestra.
+          </p>
+        </div>
       </section>
 
-      <section className="feature section" id="experiencias">
-        <div className="feature-image"><img src="/site/piscina.jpg" alt="Piscina iluminada do Cantinho da Dê" width={1600} height={900} loading="lazy" /><span>01</span></div>
-        <div className="feature-copy"><p className="eyebrow dark">Lazer ao ar livre</p><h2>Dias de sol.{' '}<br />Noites inesquecíveis.</h2><p>A área externa é um convite para relaxar, reunir quem importa e aproveitar o clima de Brasília com privacidade.</p><ul><li>Piscina privativa</li><li>Jardim e pomar</li><li>Ambiente reservado</li></ul></div>
+      <section className="feature section">
+        <div className="feature-image">
+          <img src="/site/jardim-interno.jpg" alt="Jardim interno do Cantinho da Dê" width={1600} height={900} loading="lazy" />
+          <span>01</span>
+        </div>
+        <div className="feature-copy">
+          <p className="eyebrow dark">O intervalo</p>
+          <h2>
+            A tarde rende mais{' '}
+            <br />
+            quando a pausa é de verdade.
+          </h2>
+          <p>
+            É aqui que a casa ganha da sala de reunião de hotel. No intervalo, o grupo não vai para um
+            corredor com café de garrafa térmica — vai para fora.
+          </p>
+          <ul>
+            <li>Jardim e pomar para o intervalo ao ar livre</li>
+            <li>Fogueira ao ar livre</li>
+            <li>Mesa de sinuca no mezanino</li>
+            <li>Churrasqueira para o almoço no local</li>
+          </ul>
+        </div>
       </section>
 
       <section className="feature feature-reverse section">
-        <div className="feature-image"><img src="/site/rede.jpg" alt="Rede suspensa e mesa de sinuca no mezanino" width={1600} height={900} loading="lazy" /><span>02</span></div>
-        <div className="feature-copy"><p className="eyebrow dark">Diversão em outro nível</p><h2>Um espaço que{' '}<br />não parece com nenhum outro.</h2><p>O mezanino reúne sinuca, cantinhos de descanso e a rede suspensa — um dos detalhes mais marcantes da casa.</p><ul><li>Mesa de sinuca</li><li>Rede suspensa</li><li>TV móvel de 65”</li></ul></div>
+        <div className="feature-image">
+          <img src="/site/rede.jpg" alt="Mezanino com rede suspensa e mesa de sinuca" width={1600} height={900} loading="lazy" />
+          <span>02</span>
+        </div>
+        <div className="feature-copy">
+          <p className="eyebrow dark">Formatos</p>
+          <h2>
+            Cabe mais coisa{' '}
+            <br />
+            do que reunião.
+          </h2>
+          <p>
+            Grupos pequenos e médios funcionam melhor aqui do que auditório. A casa foi feita para
+            conversa, não para fileira.
+          </p>
+          <ul>
+            <li>Workshops e treinamentos de equipe</li>
+            <li>Aulas, cursos e mentorias</li>
+            <li>Planejamento e imersão de liderança</li>
+            <li>Reuniões de sócios e encontros de conselho</li>
+            <li>Retiros com pernoite para até 6 pessoas</li>
+          </ul>
+        </div>
       </section>
 
-      <section className="tour-invite">
-        <img src="/site/salao.jpg" alt="Salão principal do Cantinho da Dê" width={1600} height={900} loading="lazy" /><div className="tour-invite-shade" />
-        <div className="tour-invite-copy"><span className="tour-orbit">360°</span><p className="eyebrow">Visita imersiva</p><h2>Entre antes{' '}<br />mesmo de chegar.</h2><p>Passeie por cada ambiente e descubra os detalhes do Cantinho da Dê.</p><a className="button button-gold" href="/explorar">Iniciar tour virtual <span>→</span></a></div>
-      </section>
-
-      <section className="gallery-section section" id="galeria">
-        <div className="section-heading"><div><p className="eyebrow dark">Galeria</p><h2>Um olhar mais de perto.</h2></div><p>Ambientes reais, preparados com carinho para receber.</p></div>
-        <div className="gallery-grid">{gallery.map((item) => <figure key={item.src} className={item.className}><img src={item.src} alt={item.alt} width={1600} height={900} loading="lazy" /></figure>)}</div>
+      <section className="section" style={{ background: 'var(--paper)' }}>
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow dark">Como funciona</p>
+            <h2>Simples assim.</h2>
+          </div>
+          <p>Sem plataforma, sem taxa de intermediação. A conversa é direta com a anfitriã.</p>
+        </div>
+        <div className="steps">
+          <div className="step">
+            <span>01</span>
+            <strong>Conversa</strong>
+            <p>Você conta o formato, quantas pessoas e a data pretendida. Respondemos com disponibilidade e valor.</p>
+          </div>
+          <div className="step">
+            <span>02</span>
+            <strong>Visita</strong>
+            <p>Presencial, com hora marcada — ou pelo tour 360°, se você preferir decidir sem sair do lugar.</p>
+          </div>
+          <div className="step">
+            <span>03</span>
+            <strong>O dia</strong>
+            <p>A casa fica preparada no formato combinado. Vocês chegam e começam.</p>
+          </div>
+        </div>
+        <p className="note">
+          <strong>Disponibilidade:</strong> o calendário na página de reserva mostra as datas já
+          ocupadas, atualizadas direto do nosso sistema de reservas.
+        </p>
+        <p className="note">
+          <strong>Grupos acima de 20 pessoas:</strong> são 10 vagas dentro do lote. Para turmas
+          maiores, vale combinar van ou carona antes — o condomínio é residencial e a rua não
+          comporta o excedente. A gente ajuda a organizar isso no primeiro contato.
+        </p>
       </section>
 
       <section className="section" style={{ background: 'var(--cream)' }}>
         <div className="section-heading">
-          <div><p className="eyebrow dark">A casa também recebe</p><h2>Mais do que hospedagem.</h2></div>
-          <p>Além da hospedagem, o Cantinho recebe grupos, encontros e produções.</p>
+          <div><p className="eyebrow dark">A casa também recebe</p><h2>Não é só encontro.</h2></div>
+          <p>O mesmo espaço atende hospedagem e produção audiovisual.</p>
         </div>
         <div className="doors">
-          <a className="door" href="/workshops">
-            <img src="/site/salao.jpg" alt="" width={1600} height={900} loading="lazy" />
+          <a className="door" href="/hospedagem">
+            <img src="/site/piscina.jpg" alt="" width={1600} height={900} loading="lazy" />
             <div>
-              <p className="eyebrow">Workshops e imersões</p>
-              <h3>Um dia inteiro de foco.</h3>
-              <p>Salão para 30 pessoas sentadas, com dois banheiros exclusivos. Piscina e pomar no intervalo.</p>
-              <b>Conhecer o espaço →</b>
+              <p className="eyebrow">Hospedagem</p>
+              <h3>A casa inteira para você.</h3>
+              <p>Dois quartos para até 6 hóspedes, com piscina, sinuca e churrasqueira.</p>
+              <b>Ver a casa →</b>
             </div>
           </a>
           <a className="door" href="/producao">
@@ -91,7 +194,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="closing-cta"><div><p className="eyebrow">Seu próximo encontro começa aqui</p><h2>Venha viver o{' '}<br />Cantinho da Dê.</h2></div><a className="button button-gold" href={airbnbUrl} target="_blank" rel="noreferrer">Ver datas disponíveis <span>↗</span></a></section>
+      <section className="closing-cta">
+        <div>
+          <p className="eyebrow">Seu próximo encontro começa aqui</p>
+          <h2>
+            Vamos falar{' '}
+            <br />
+            sobre o seu dia.
+          </h2>
+        </div>
+        <a className="button button-gold" href="/reservar?tipo=workshop">
+          Solicitar reserva <span>→</span>
+        </a>
+      </section>
 
       <SiteFooter />
     </main>

@@ -7,9 +7,9 @@ import './globals.css';
 // Precisa ser absoluto: WhatsApp e Google buscam a imagem por URL completa.
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cantinhodade.com.br';
 
-const TITLE = 'Cantinho da Dê | Hospedagem em Brasília';
+const TITLE = 'Cantinho da Dê | Espaço para workshops e encontros em Brasília';
 const DESCRIPTION =
-  'Conheça o Cantinho da Dê: piscina, sinuca, salão e natureza em uma hospedagem inteira no Jockey, em Brasília.';
+  'Salão para até 30 pessoas no Park Way, a 15 minutos do Plano Piloto. Workshops, imersões, locação para produção e hospedagem.';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
