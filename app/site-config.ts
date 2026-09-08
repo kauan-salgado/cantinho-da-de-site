@@ -1,8 +1,9 @@
 export const airbnbUrl = 'https://www.airbnb.com.br/rooms/1670634373405703050';
 
-// ⚠️ TROCAR PELO NÚMERO REAL ANTES DE PUBLICAR.
-// Formato: 55 (país) + DDD + número, só dígitos.
-export const whatsappNumero = '5561900000000';
+// 55 (país) + 61 (DDD) + número. Número pessoal do Kauan, usado como
+// contato do negócio por enquanto — trocar aqui se migrar para uma linha
+// dedicada com WhatsApp Business.
+export const whatsappNumero = '5561996251146';
 
 export function whatsappLink(mensagem: string) {
   return `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(mensagem)}`;
