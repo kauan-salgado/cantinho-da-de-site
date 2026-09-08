@@ -41,8 +41,8 @@ export default function WorkshopsPage() {
             workshops, treinamentos e imersões que não terminam com todo mundo olhando o relógio.
           </p>
           <div className="hero-actions">
-            <a className="button button-gold" href={contato} target="_blank" rel="noreferrer">
-              Falar no WhatsApp <span>↗</span>
+            <a className="button button-gold" href="/reservar?tipo=workshop">
+              Solicitar reserva <span>→</span>
             </a>
             <a className="button button-ghost" href="/explorar">
               Ver o espaço em 360° <span>→</span>
@@ -176,8 +176,8 @@ export default function WorkshopsPage() {
             sobre o seu dia.
           </h2>
         </div>
-        <a className="button button-gold" href={contato} target="_blank" rel="noreferrer">
-          Falar no WhatsApp <span>↗</span>
+        <a className="button button-gold" href="/reservar?tipo=workshop">
+          Solicitar reserva <span>→</span>
         </a>
       </section>
 

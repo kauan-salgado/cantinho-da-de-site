@@ -224,3 +224,61 @@ button { font: inherit; }
   .footer-nav { gap: 20px 26px; }
   .door { min-height: 340px; padding: 28px; }
 }
+
+/* ---- Solicitação de reserva ---- */
+.reserva-topo { padding: 168px 7vw 0; background: var(--paper); }
+.reserva-topo h1 { margin: 0; max-width: 720px; font: 400 clamp(44px, 5.4vw, 76px) Georgia, serif; letter-spacing: -.045em; line-height: 1.02; color: var(--ink); }
+.reserva-topo > p:not(.eyebrow) { max-width: 520px; margin: 24px 0 0; color: #625e57; font-size: 15px; line-height: 1.8; }
+.reserva-secao { padding-top: 60px; background: var(--paper); }
+.reserva { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); gap: 6vw; align-items: start; }
+
+.campo { margin: 0 0 46px; padding: 0; border: 0; }
+.campo legend { padding: 0 0 18px; color: var(--ink); font: 400 21px Georgia, serif; letter-spacing: -.02em; }
+.campo legend span { color: var(--muted); font-size: 13px; font-family: inherit; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 9px; }
+.chip { padding: 12px 18px; border: 1px solid #d0cabf; border-radius: 999px; background: transparent; color: #57534c; font-size: 12px; cursor: pointer; transition: border-color .2s ease, background .2s ease, color .2s ease; }
+.chip:hover { border-color: #a27028; color: var(--ink); }
+.chip.ativo { border-color: var(--ink); background: var(--ink); color: var(--cream); }
+
+.cal-topo { display: flex; align-items: center; justify-content: space-between; max-width: 400px; margin-bottom: 16px; }
+.cal-topo strong { font: 400 18px Georgia, serif; color: var(--ink); }
+.cal-topo button { width: 38px; height: 38px; border: 1px solid #d0cabf; border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; transition: border-color .2s ease; }
+.cal-topo button:hover:not(:disabled) { border-color: #a27028; }
+.cal-topo button:disabled { opacity: .3; cursor: not-allowed; }
+.cal-semana, .cal-grade { display: grid; grid-template-columns: repeat(7, 1fr); max-width: 400px; }
+.cal-semana { margin-bottom: 6px; }
+.cal-semana span { padding: 6px 0; text-align: center; color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+.cal-grade { gap: 3px; }
+.cal-dia { aspect-ratio: 1; border: 1px solid transparent; border-radius: 6px; background: #ece7dd; color: #3d3a35; font-size: 13px; cursor: pointer; transition: background .15s ease, color .15s ease; }
+.cal-dia:hover:not(:disabled) { background: #dcd4c6; }
+.cal-dia.off { background: transparent; color: #c3bcaf; cursor: not-allowed; text-decoration: line-through; }
+.cal-dia.sel { background: var(--ink); color: var(--gold-light); font-weight: 700; }
+.cal-dia.entre { background: #d8c69f; color: var(--ink); }
+.cal-legenda { max-width: 400px; margin: 16px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.cal-escolha { display: flex; align-items: center; gap: 12px; margin: 14px 0 0; color: #504c46; font-size: 13px; }
+.cal-escolha button { border: 0; background: transparent; color: #a27028; font-size: 12px; text-decoration: underline; cursor: pointer; }
+
+.campo input[type='number'], .campo textarea { width: 100%; max-width: 400px; padding: 14px 16px; border: 1px solid #d0cabf; border-radius: 8px; background: #fff; color: var(--ink); font: inherit; font-size: 15px; }
+.campo input[type='number']:focus, .campo textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: transparent; }
+.ajuda { margin: 12px 0 0; max-width: 400px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.aviso { max-width: 440px; margin: 14px 0 0; padding: 14px 16px; border-left: 2px solid var(--gold); background: var(--cream); color: #504c46; font-size: 12.5px; line-height: 1.7; }
+.aviso.erro { border-left-color: #a8341f; }
+
+.reserva-resumo { position: sticky; top: 40px; padding: 34px; border: 1px solid #ded8cd; border-radius: 12px; background: #fff; }
+.reserva-resumo h3 { margin: 0 0 24px; font: 400 26px Georgia, serif; letter-spacing: -.03em; color: var(--ink); line-height: 1.15; }
+.reserva-resumo dl { margin: 0 0 28px; }
+.reserva-resumo dl > div { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid #ebe6dc; }
+.reserva-resumo dt { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.reserva-resumo dd { margin: 0; color: var(--ink); font-size: 13px; text-align: right; }
+.reserva-resumo .button { width: 100%; }
+.button.desativado { opacity: .38; pointer-events: none; }
+
+@media (max-width: 980px) {
+  .reserva { grid-template-columns: 1fr; gap: 44px; }
+  .reserva-resumo { position: static; }
+}
+@media (max-width: 640px) {
+  .reserva-topo { padding: 132px 20px 0; }
+  .cal-semana, .cal-grade, .cal-topo { max-width: none; }
+}

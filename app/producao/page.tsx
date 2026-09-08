@@ -52,8 +52,8 @@ export default function ProducaoPage() {
             para ensaio, gravação e produção de conteúdo — sem montar cenário do zero.
           </p>
           <div className="hero-actions">
-            <a className="button button-gold" href={contato} target="_blank" rel="noreferrer">
-              Falar no WhatsApp <span>↗</span>
+            <a className="button button-gold" href="/reservar?tipo=producao">
+              Solicitar reserva <span>→</span>
             </a>
             <a className="button button-ghost" href="/explorar">
               Visita técnica em 360° <span>→</span>
@@ -203,8 +203,8 @@ export default function ProducaoPage() {
             precisa gravar.
           </h2>
         </div>
-        <a className="button button-gold" href={contato} target="_blank" rel="noreferrer">
-          Falar no WhatsApp <span>↗</span>
+        <a className="button button-gold" href="/reservar?tipo=producao">
+          Solicitar reserva <span>→</span>
         </a>
       </section>
 
