@@ -6,7 +6,7 @@ import { airbnbUrl } from '../site-config';
 export const metadata: Metadata = {
   title: 'Hospedagem em Brasília | Cantinho da Dê',
   description:
-    'Casa inteira para até 6 hóspedes no Park Way, com piscina, sinuca, salão e pomar. A 15 minutos do Plano Piloto.',
+    'Casa inteira para até 6 hóspedes no Jockey Club, com piscina, sinuca, salão e pomar. A 15 minutos do Plano Piloto.',
   alternates: { canonical: '/hospedagem' },
   openGraph: {
     title: 'Hospedagem em Brasília | Cantinho da Dê',
@@ -38,7 +38,7 @@ export default function HospedagemPage() {
         </video>
         <div className="hero-shade" />
         <div className="hero-copy">
-          <p className="eyebrow">Jockey · Brasília</p>
+          <p className="eyebrow">Jockey Club · Brasília</p>
           <h1>Um lugar inteiro{' '}<br />para viver bons encontros.</h1>
           <p className="hero-lead">Conforto, lazer e natureza em um espaço amplo, acolhedor e cheio de personalidade.</p>
           <div className="hero-actions">

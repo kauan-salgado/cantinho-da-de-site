@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Locação para produção e gravação | Cantinho da Dê',
     description:
-      'Cimento, viga preta e pé-direito alto. Dez cenários diferentes em um endereço só, no Park Way.',
+      'Cimento, viga preta e pé-direito alto. Dez cenários diferentes em um endereço só, no Jockey Club.',
     url: '/producao',
     images: [{ url: '/site/og.jpg', width: 1200, height: 630, alt: 'Cantinho da Dê, em Brasília' }],
   },

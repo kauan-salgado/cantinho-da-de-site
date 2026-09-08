@@ -20,7 +20,7 @@ export default function SiteFooter() {
         ))}
       </nav>
       <div>
-        <span>Jockey · Brasília, DF</span>
+        <span>Jockey Club · Brasília, DF</span>
         <a href={airbnbUrl} target="_blank" rel="noreferrer">
           Airbnb ↗
         </a>

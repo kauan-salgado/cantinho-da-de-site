@@ -9,7 +9,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cantinhodade.com.b
 
 const TITLE = 'Cantinho da Dê | Espaço para workshops e encontros em Brasília';
 const DESCRIPTION =
-  'Salão para até 30 pessoas no Park Way, a 15 minutos do Plano Piloto. Workshops, imersões, locação para produção e hospedagem.';
+  'Salão para até 30 pessoas no Jockey Club, a 15 minutos do Plano Piloto. Workshops, imersões, locação para produção e hospedagem.';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

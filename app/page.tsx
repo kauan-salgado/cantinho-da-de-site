@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cantinho da Dê | Espaço para workshops e encontros em Brasília',
     description:
-      'Um dia inteiro de foco, sem cara de escritório. Salão para até 30 pessoas, jardim e pomar no Park Way, a 15 minutos do Plano Piloto.',
+      'Um dia inteiro de foco, sem cara de escritório. Salão para até 30 pessoas, jardim e pomar no Jockey Club, a 15 minutos do Plano Piloto.',
     url: '/',
     images: [{ url: '/site/og.jpg', width: 1200, height: 630, alt: 'Cantinho da Dê, em Brasília' }],
   },
@@ -30,7 +30,7 @@ export default function Home() {
         <img src="/site/salao.jpg" alt="Salão do Cantinho da Dê preparado para receber grupos" width={1600} height={900} />
         <div className="hero-shade" />
         <div className="hero-copy">
-          <p className="eyebrow">Espaço para encontros · Park Way</p>
+          <p className="eyebrow">Espaço para encontros · Jockey Club</p>
           <h1>
             Um dia inteiro de foco.{' '}
             <br />
