@@ -103,7 +103,6 @@ export default function Home() {
           </p>
           <ul>
             <li>Jardim e pomar para o intervalo ao ar livre</li>
-            <li>Fogueira ao ar livre</li>
             <li>Mesa de sinuca no mezanino</li>
             <li>Cozinha completa para coffee break e buffet</li>
             <li>Churrasqueira para o almoço no local</li>
