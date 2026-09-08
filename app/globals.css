@@ -282,3 +282,4 @@ button { font: inherit; }
   .reserva-topo { padding: 132px 20px 0; }
   .cal-semana, .cal-grade, .cal-topo { max-width: none; }
 }
+.cal-sync { color: #a27028; }

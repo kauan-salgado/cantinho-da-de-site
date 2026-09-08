@@ -25,12 +25,12 @@ export const datasIndisponiveis: string[] = [
 ];
 
 export const tiposDeEvento = [
-  { id: 'workshop', label: 'Workshop ou treinamento', maxPessoas: 30, apenasDiasUteis: true },
-  { id: 'aula', label: 'Aula, curso ou mentoria', maxPessoas: 30, apenasDiasUteis: true },
-  { id: 'imersao', label: 'Planejamento ou imersão de equipe', maxPessoas: 30, apenasDiasUteis: true },
-  { id: 'reuniao', label: 'Reunião de sócios ou conselho', maxPessoas: 30, apenasDiasUteis: true },
-  { id: 'producao', label: 'Produção, gravação ou ensaio', maxPessoas: 30, apenasDiasUteis: true },
-  { id: 'hospedagem', label: 'Hospedagem com pernoite', maxPessoas: 6, apenasDiasUteis: false },
+  { id: 'workshop', label: 'Workshop ou treinamento', maxPessoas: 30, pernoite: false },
+  { id: 'aula', label: 'Aula, curso ou mentoria', maxPessoas: 30, pernoite: false },
+  { id: 'imersao', label: 'Planejamento ou imersão de equipe', maxPessoas: 30, pernoite: false },
+  { id: 'reuniao', label: 'Reunião de sócios ou conselho', maxPessoas: 30, pernoite: false },
+  { id: 'producao', label: 'Produção, gravação ou ensaio', maxPessoas: 30, pernoite: false },
+  { id: 'hospedagem', label: 'Hospedagem com pernoite', maxPessoas: 6, pernoite: true },
 ] as const;
 
 export type TipoDeEvento = (typeof tiposDeEvento)[number];

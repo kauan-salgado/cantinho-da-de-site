@@ -157,8 +157,8 @@ export default function WorkshopsPage() {
           </div>
         </div>
         <p className="note">
-          <strong>Disponibilidade:</strong> encontros de segunda a quinta. Sexta, sábado e domingo a
-          casa é reservada para hospedagem.
+          <strong>Disponibilidade:</strong> o calendário na página de reserva mostra as datas já
+          ocupadas, atualizadas direto do nosso sistema de reservas.
         </p>
         <p className="note">
           <strong>Grupos acima de 20 pessoas:</strong> são 10 vagas dentro do lote. Para turmas

@@ -29,6 +29,9 @@ export default function SolicitacaoReserva() {
   const [fim, setFim] = useState<string | null>(null);
   const [pessoas, setPessoas] = useState('');
   const [observacao, setObservacao] = useState('');
+  const [ocupadasNoAirbnb, setOcupadasNoAirbnb] = useState<string[]>([]);
+  const [saidasNoAirbnb, setSaidasNoAirbnb] = useState<string[]>([]);
+  const [sincronia, setSincronia] = useState<'carregando' | 'ok' | 'falhou'>('carregando');
 
   const hoje = useMemo(() => new Date(), []);
   const [mesVisivel, setMesVisivel] = useState(() => new Date(hoje.getFullYear(), hoje.getMonth(), 1));
@@ -41,6 +44,25 @@ export default function SolicitacaoReserva() {
     if (desejado && tiposDeEvento.some((t) => t.id === desejado)) setTipoId(desejado);
   }, []);
 
+  // Datas já ocupadas no Airbnb. A função roda no servidor porque o Airbnb
+  // não libera CORS e o endereço do calendário é secreto. Se falhar, o
+  // calendário segue funcionando só com os bloqueios manuais.
+  useEffect(() => {
+    let ativo = true;
+    fetch('/.netlify/functions/disponibilidade')
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+      .then((dados) => {
+        if (!ativo) return;
+        setOcupadasNoAirbnb(Array.isArray(dados.datas) ? dados.datas : []);
+        setSaidasNoAirbnb(Array.isArray(dados.saidas) ? dados.saidas : []);
+        setSincronia('ok');
+      })
+      .catch(() => ativo && setSincronia('falhou'));
+    return () => {
+      ativo = false;
+    };
+  }, []);
+
   // Trocar de tipo pode invalidar as datas escolhidas (regra de dias muda).
   useEffect(() => {
     setInicio(null);
@@ -49,11 +71,13 @@ export default function SolicitacaoReserva() {
 
   const chaveHoje = iso(hoje);
 
-  function bloqueada(chave: string, diaDaSemana: number) {
+  function bloqueada(chave: string) {
     if (chave < chaveHoje) return 'passado';
-    if (datasIndisponiveis.includes(chave)) return 'ocupada';
-    // Eventos acontecem de segunda a quinta; sexta a domingo é hospedagem.
-    if (tipo.apenasDiasUteis && [0, 5, 6].includes(diaDaSemana)) return 'fimDeSemana';
+    if (datasIndisponiveis.includes(chave) || ocupadasNoAirbnb.includes(chave)) return 'ocupada';
+    // Dia de saída de hóspede não serve para evento: ainda tem gente na casa
+    // pela manhã e a limpeza precisa acontecer antes. Para uma nova hospedagem
+    // esse mesmo dia está livre, porque a entrada é à tarde.
+    if (!tipo.pernoite && saidasNoAirbnb.includes(chave)) return 'ocupada';
     return null;
   }
 
@@ -76,14 +100,14 @@ export default function SolicitacaoReserva() {
     for (let d = 1; d <= total; d += 1) {
       const data = new Date(ano, mes, d);
       const chave = iso(data);
-      celulas.push({ chave, dia: d, motivo: bloqueada(chave, data.getDay()) });
+      celulas.push({ chave, dia: d, motivo: bloqueada(chave) });
     }
     return celulas;
-  }, [mesVisivel, tipoId, chaveHoje]);
+  }, [mesVisivel, tipoId, chaveHoje, ocupadasNoAirbnb, saidasNoAirbnb]);
 
   const numeroPessoas = Number(pessoas);
   const excedeCapacidade = numeroPessoas > tipo.maxPessoas;
-  const alertaTransporte = tipo.apenasDiasUteis && numeroPessoas > 20 && !excedeCapacidade;
+  const alertaTransporte = !tipo.pernoite && numeroPessoas > 20 && !excedeCapacidade;
   const podeEnviar = Boolean(inicio) && numeroPessoas > 0 && !excedeCapacidade;
 
   const noPassado = new Date(mesVisivel.getFullYear(), mesVisivel.getMonth(), 1) <= new Date(hoje.getFullYear(), hoje.getMonth(), 1);
@@ -155,9 +179,12 @@ export default function SolicitacaoReserva() {
             })}
           </div>
           <p className="cal-legenda">
-            {tipo.apenasDiasUteis
-              ? 'Encontros e produções acontecem de segunda a quinta. Sexta, sábado e domingo a casa é reservada para hospedagem.'
-              : 'Escolha a data de entrada e depois a de saída.'}
+            {tipo.pernoite
+              ? 'Escolha a data de entrada e depois a de saída.'
+              : 'Escolha o dia, ou um intervalo se o encontro durar mais de um dia.'}
+            {sincronia === 'ok' && ocupadasNoAirbnb.length > 0 && (
+              <span className="cal-sync"> Os dias riscados já estão ocupados.</span>
+            )}
           </p>
           {inicio && (
             <p className="cal-escolha">
@@ -180,7 +207,7 @@ export default function SolicitacaoReserva() {
             aria-describedby="limite-pessoas"
           />
           <p id="limite-pessoas" className="ajuda">
-            {tipo.apenasDiasUteis ? 'O salão comporta 30 pessoas sentadas.' : 'A casa acomoda até 6 hóspedes para pernoite.'}
+            {tipo.pernoite ? 'A casa acomoda até 6 hóspedes para pernoite.' : 'O salão comporta 30 pessoas sentadas.'}
           </p>
           {excedeCapacidade && (
             <p className="aviso erro">Acima do limite de {tipo.maxPessoas} pessoas para esse formato. Fale com a gente para ver o que dá para fazer.</p>

@@ -67,7 +67,7 @@ export default function Home() {
       <section className="section" style={{ background: 'var(--cream)' }}>
         <div className="section-heading">
           <div><p className="eyebrow dark">A casa também recebe</p><h2>Mais do que hospedagem.</h2></div>
-          <p>De segunda a quinta o Cantinho abre para grupos, encontros e produções.</p>
+          <p>Além da hospedagem, o Cantinho recebe grupos, encontros e produções.</p>
         </div>
         <div className="doors">
           <a className="door" href="/workshops">
